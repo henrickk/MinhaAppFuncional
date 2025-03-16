@@ -11,5 +11,5 @@ public class ApplicationDbContext : IdentityDbContext
     {
     }
 
-public DbSet<AppMvcFuncional.Models.Aluno> Aluno { get; set; } = default!;
+    public DbSet<Aluno> Aluno { get; set; }
 }
