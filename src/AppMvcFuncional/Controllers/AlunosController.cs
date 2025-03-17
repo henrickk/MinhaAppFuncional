@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AppMvcFuncional.Data;
 using AppMvcFuncional.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AppMvcFuncional.Controllers
 {
+    [Authorize]
     [Route("meus-alunos")]
     public class AlunosController  : Controller
     {
