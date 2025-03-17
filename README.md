@@ -13,7 +13,7 @@ MinhaAppFuncional é um projeto de exemplo desenvolvido seguindo o curso **Funda
 ## Tecnologias Utilizadas
 
 - .NET 8
-- ASP.NET Core Razor Pages
+- ASP.NET Core MVC
 - Entity Framework Core
 - Microsoft SQL Server
 
@@ -25,6 +25,7 @@ MinhaAppFuncional é um projeto de exemplo desenvolvido seguindo o curso **Funda
 ## Configuração do Projeto
 
 1. Clone o repositório:
+   
 
 2. Navegue até o diretório do projeto:
 
