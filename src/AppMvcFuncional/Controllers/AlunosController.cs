@@ -22,13 +22,15 @@ namespace AppMvcFuncional.Controllers
         // GET: Alunos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Aluno.ToListAsync());
+            return _context.Aluno != null ?
+                        View(await _context.Aluno.ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.Aluno' is null.");
         }
 
         // GET: Alunos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Aluno == null)
             {
                 return NotFound();
             }
@@ -54,7 +56,7 @@ namespace AppMvcFuncional.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,DataNascimento,Email,Avaliacao,Ativo")] Aluno aluno)
+        public async Task<IActionResult> Create([Bind("Id,Nome,DataNascimento,Email,EmailConfirmacao,Avaliacao,Ativo")] Aluno aluno)
         {
             if (ModelState.IsValid)
             {
@@ -119,7 +121,7 @@ namespace AppMvcFuncional.Controllers
         // GET: Alunos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
+            if (id == null || _context.Aluno == null)
             {
                 return NotFound();
             }
